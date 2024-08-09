@@ -1,0 +1,40 @@
+server:
+  port: 9090
+  servlet:
+    contextPath: /babafacil/api/
+
+spring:
+  application:
+    name: iflowdata-service
+
+  # Size config - configuração para suportar as o upload de fotos.
+  http:
+    multipart:
+      max-file-size: 3000KB
+      max-request-size: 3000KB
+
+      #multiple-datasource:
+       # dbs:
+          #- db: login
+          #  url: ${DB_URL:jdbc:oracle:thin:@integrade.webne.com.br:1521:ORAROMA}
+          #  username: usuario
+          #  password: senha
+          #  driver: oracle.jdbc.OracleDriver
+          #  enabled: true
+
+      spring:
+        application:
+          name: iflowdata-service
+        http:
+          multipart:
+            max-file-size: 3000KB
+            max-request-size: 3000KB
+        autoconfigure:
+          exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+
+
+api:
+  security:
+    token:
+      secret: ${TOKEN_SECRETE:andreyteste2198u31289udjhasdh917hdoo}
